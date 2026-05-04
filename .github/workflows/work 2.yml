@@ -1,0 +1,21 @@
+name: Work 2 Emilio - Python
+
+on: [push]
+
+jobs:
+  build-python:
+    runs-on: windows-latest
+    steps:
+      - name: Mostrar mensaje
+        run: echo "EJECUTANDO WORKFLOW EN WINDOWS CON PYTHON"
+
+      - name: Instalar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Ver versión de Python
+        run: python --version
+
+      - name: Ejecutar script simple
+        run: python -c "print('Hola desde GitHub Actions usando Python')"
